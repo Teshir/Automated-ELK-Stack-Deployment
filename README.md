@@ -98,14 +98,14 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to http://<ELK.VM.External.IP>:5601/app/kibana to check that the installation worked as expected.
 
  _Which file is the playbook? Where do you copy it?_
-- 
+ 
 - filebeat-playbook.yml  
 - metricbeat-playbook.yml
 - install-elk.yml
-- Copy it to /etc/ansible/
-- 
+Copy it to /etc/ansible/
+ 
 _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- 
+
 - Edit the Hosts file in /etc/ansbile to look something like this.
 	`
 	[webservers]
@@ -117,9 +117,10 @@ _Which file do you update to make Ansible run the playbook on a specific machine
 - _Which URL do you navigate to in order to check that the ELK server is running?_
 - http://<ELK.VM.External.IP>:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+To run the playbooks the commands are
 
 - To run the Install Elk playbook the command is `ansinble-playbook /etc/ansbile/install-elk`
 - To run the filebeat playbook the command is `ansible-playbook /etc/ansbile/filebeat-ansible`
 - to run the metricbeat playbook the command is `ansible-playbook /etc/ansbile/metricbeat-ansible`
-- To update filebeat or metricbeat change the link and the version in the dpkg command in the playbook to a more updated one
+
+To update filebeat or metricbeat change the link and the version in the dpkg command in the playbook to a more updated one
