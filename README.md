@@ -82,6 +82,7 @@ This ELK server is configured to monitor the following machines:
 - Web-2 10.0.0.10
 - Web-3 10.0.0.13
 - Elk Machine 10.1.0.4
+
 We have installed the following Beats on these machines:
 - Filebeat and Metricbeat
 
@@ -98,7 +99,7 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to http://<ELK.VM.External.IP>:5601/app/kibana to check that the installation worked as expected.
 
  _Which file is the playbook? Where do you copy it?_
- 
+ Each Playbook is named appropriately 
 - filebeat-playbook.yml  
 - metricbeat-playbook.yml
 - install-elk.yml
@@ -107,15 +108,15 @@ Copy it to /etc/ansible/
 _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 
 - Edit the Hosts file in /etc/ansbile to look something like this.
-	`
+	```
 	[webservers]
 	 10.0.0.8 ansible_python_interpreter=/usr/bin/python3
 	[elk]
 	 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-	`
-- 
+	```
+ 
 - _Which URL do you navigate to in order to check that the ELK server is running?_
-- http://<ELK.VM.External.IP>:5601/app/kibana
+ http://<ELK.VM.External.IP>:5601/app/kibana
 
 To run the playbooks the commands are
 
