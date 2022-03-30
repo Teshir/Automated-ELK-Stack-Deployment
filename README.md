@@ -24,7 +24,6 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly stable, in addition to restricting connections to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 - Load balancers, as their name implies, balance the load between web servers. Having a load balancer helps ensure availability. If a one web server goes down, the other two pick up the slack. Having a jump box allows easier in and out for administrators and makes setting rules much easier. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system Traffic.
@@ -32,7 +31,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeat helps monitor servers by collecting metrics from the system and services running on the server.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name                 | Function   | IP Adress | Operating System |
 |----------------------|------------|-----------|------------------|
@@ -49,8 +47,8 @@ Only the Jump-Box-Provisioner machine can accept connections from the Internet. 
 - My Personal IP
 
 
-Machines within the network can only be accessed by Jump-box-Provisoner's docker container_____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by Jump-box-Provisoner's docker container.
+- The Elk-Machine can only be accessed by ssh through the Jump-box-Provisioner. The Elk-Machine can only be connected by web by My Personal IP.
 
 A summary of the access policies in place can be found in the table below.
 
@@ -80,7 +78,6 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
-- _TODO: List the IP addresses of the machines you are monitoring_
 - Web-1 10.0.0.11
 - Web-2 10.0.0.10
 - Web-3 10.0.0.13
@@ -105,7 +102,9 @@ SSH into the control node and follow the steps below:
 - metricbeat-playbook.yml
 - install-elk.yml
 - Copy it to /etc/ansible/
+- 
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- 
 - Edit the Hosts file in /etc/ansbile to look something like this.
 	`
 	[webservers]
