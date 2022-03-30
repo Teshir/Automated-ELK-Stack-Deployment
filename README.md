@@ -2,13 +2,13 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![](Images/diagram.png)
+![](Images/Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YML file may be used to install only certain pieces of it, such as Filebeat.
 
-  - Install Elk [](Project-1/ansible/install-elk)
-  - Install Filebeat [](Project-1/ansible/filebeat-playbook)
-  - Install Metricbeat [](Project-1/ansible/metricbeat-playbook)
+  - Install Elk [](Ansible/install-elk)
+  - Install Filebeat [](https://github.com/Teshir/Project-1/blob/main/Ansible/filebeat-playbook.yml)
+  - Install Metricbeat [](Ansible/metricbeat-playbook)
 
 This document contains the following details:
 - Description of the Topology
@@ -66,10 +66,10 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because configurations can be easily set up on new machines or if configurations need updating it is much faster than doing each one individually. If you set up right the first time, you set it up right every time. Doing those type of tasks manually could easily lead to mistakes on the human end of things and each server could have it's own configuration by accident.
 
 The playbook implements the following tasks:
-- ... Installs docker.io, pip3 and docker pip module
-- ... Increases the virtual memory
-- ... Installs the Elk image
-- ... Sets Ports
+-  Installs docker.io, pip3 and docker pip module
+-  Increases the virtual memory
+-  Installs the Elk image
+-  Sets Ports
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
