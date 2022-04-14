@@ -2,13 +2,13 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![](Images/diagram.png)
+![](Images/Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YML file may be used to install only certain pieces of it, such as Filebeat.
 
-  - Install Elk [](Project-1/ansible/install-elk)
-  - Install Filebeat [](Project-1/ansible/filebeat-playbook)
-  - Install Metricbeat [](Project-1/ansible/metricbeat-playbook)
+  - [Install Elk](Ansible/install-elk)
+  - [Install Filebeat](Ansible/filebeat-playbook.yml)
+  - [Install Metricbeat](Ansible/metricbeat-playbook)
 
 This document contains the following details:
 - Description of the Topology
@@ -66,10 +66,10 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because configurations can be easily set up on new machines or if configurations need updating it is much faster than doing each one individually. If you set up right the first time, you set it up right every time. Doing those type of tasks manually could easily lead to mistakes on the human end of things and each server could have it's own configuration by accident.
 
 The playbook implements the following tasks:
-- ... Installs docker.io, pip3 and docker pip module
-- ... Increases the virtual memory
-- ... Installs the Elk image
-- ... Sets Ports
+-  Installs docker.io, pip3 and docker pip module
+-  Increases the virtual memory
+-  Installs the Elk image
+-  Sets Ports
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -82,6 +82,7 @@ This ELK server is configured to monitor the following machines:
 - Web-2 10.0.0.10
 - Web-3 10.0.0.13
 - Elk Machine 10.1.0.4
+
 We have installed the following Beats on these machines:
 - Filebeat and Metricbeat
 
@@ -97,26 +98,30 @@ SSH into the control node and follow the steps below:
 - Update the config file to include the elk server's private ip
 - Run the playbook, and navigate to http://<ELK.VM.External.IP>:5601/app/kibana to check that the installation worked as expected.
 
-- _Which file is the playbook? Where do you copy it?
+ _Which file is the playbook? Where do you copy it?_
+ Each Playbook is named appropriately 
 - filebeat-playbook.yml  
 - metricbeat-playbook.yml
 - install-elk.yml
-- Copy it to /etc/ansible/
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+Copy it to /etc/ansible/
+ 
+_Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+
 - Edit the Hosts file in /etc/ansbile to look something like this.
-	`
+	```
 	[webservers]
 	 10.0.0.8 ansible_python_interpreter=/usr/bin/python3
 	[elk]
 	 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-	`
-- 
+	```
+ 
 - _Which URL do you navigate to in order to check that the ELK server is running?_
-- http://<ELK.VM.External.IP>:5601/app/kibana
+ http://<ELK.VM.External.IP>:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+To run the playbooks the commands are
 
 - To run the Install Elk playbook the command is `ansinble-playbook /etc/ansbile/install-elk`
 - To run the filebeat playbook the command is `ansible-playbook /etc/ansbile/filebeat-ansible`
 - to run the metricbeat playbook the command is `ansible-playbook /etc/ansbile/metricbeat-ansible`
-- To update filebeat or metricbeat change the link and the version in the dpkg command in the playbook to a more updated one
+
+To update filebeat or metricbeat change the link and the version in the dpkg command in the playbook to a more updated one
